@@ -10,7 +10,7 @@ all_words = ['些', '吧', '先生', '出租车', '送报员', '送奶员', '公
 
 for chinese_word in all_words:
     system_command = f"You are a helpful Chinese language tutor, skilled in explaining new vocabulary in an easy to understand way for users who already know only a few elementary Chinese words. You will be given a Chinese word, and you will need to explain its meaning."
-    user_command = f"Create an easy to understand chinese sentence for this word that will let me easily infer the meaning of this word: “{chinese_word}”, then explain the meaning using very simple chinese words. Use this format: 这个词是“{chinese_word}”。“{chinese_word}”的意思是。。。比如，。。。Do not use any English words."
+    user_command = f"Create an easy to understand chinese sentence for this word that will let me easily infer the meaning of this word: “{chinese_word}”, then explain the meaning using very simple chinese words. Use this format: 这个词是“{chinese_word}”。“{chinese_word}”的意思是。。。，英文翻译是。。。比如，。。。"
 
     completion = client.chat.completions.create(
         model="gpt-4-turbo-preview",
@@ -23,8 +23,8 @@ for chinese_word in all_words:
 
     speech_file_path = Path(__file__).parent / "speech_files" / f"{chinese_word}.mp3"
     response = client.audio.speech.create(
-    model="tts-1",
-    voice="echo",
-    input=completion.choices[0].message.content
+        model="tts-1",
+        voice="echo",
+        input=completion.choices[0].message.content
     )
     response.stream_to_file(speech_file_path)
