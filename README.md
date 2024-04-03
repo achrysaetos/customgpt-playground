@@ -22,4 +22,4 @@ Recursively iterates on ideas (given feedback) to reach the optimal conclusion.
 * Advisor - provides feedback
 * QA - determines improvement
 
-Though to be clear, the result is not that great in practice, lol.
+Though to be clear, the result is not that great in practice, especially for long context windows.
