@@ -15,4 +15,11 @@ The files are stored as mp3 in the `speech_files` directory, so you can transfer
 
 ## GPT groupthink
 
-...
+Recursively iterates on ideas (given feedback) to reach the optimal conclusion.
+
+3 components:
+* Writer - generates main ideas
+* Advisor - provides feedback
+* QA - determines improvement
+
+Though to be clear, the result is not that great in practice, lol.
