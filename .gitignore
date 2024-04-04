@@ -1,1 +1,5 @@
 venv
+.env
+
+language_files
+story_files
