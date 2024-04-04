@@ -15,11 +15,22 @@ The files are stored as mp3 in the `speech_files` directory, so you can transfer
 
 ## GPT groupthink
 
-Recursively iterates on ideas (given feedback) to reach the optimal conclusion.
+Recursively iterates on an idea (given feedback) to reach the optimal conclusion. Use case is for delving into debate or brainstorm sessions.
 
 3 components:
 * Writer - generates main ideas
 * Advisor - provides feedback
 * QA - determines improvement
 
-Though to be clear, the result is not that great in practice, especially for long context windows.
+Though to be clear, the result is not that great in practice, especially after many iterations.
+
+## Story generator
+
+Generates a cohesive story from a given genre, topic, and length. Use case is for creating articles, podcasts, or novels.
+
+3 phases:
+* Generate idea and outline
+* Create story draft
+* Revise and finalize story
+
+An expansion of GroupThink, but the result is still way too cliched and the parts don't fit together as well as they need to.
