@@ -1,16 +1,22 @@
 text = """
 
-In the realm of Aldoria, where the winds carried whispers of war and the land trembled with the echoes of conflict, two infants were born on a fateful night. Alaric, with hair as dark as a moonless night and eyes that gleamed like steel, was taken to the formidable Northern Army by the order of the king. Meanwhile, Elara, with locks of silver that seemed to shimmer with their own light and eyes ablaze with a mysterious allure, was entrusted to the secretive Order of the Enchanted Flame in the Southern Kingdom.
+The success of their steam engine project marked a turning point for Adelaide and Alexander. Society's resistance to their union and work persisted, but with tangible proof of their achievements, opinions began to shift slowly. Adelaide's reputation as an engineer grew, her name becoming synonymous with innovation and determination.
 
-Alaric grew up amidst the clang of swords and the heavy footfalls of seasoned warriors. He trained tirelessly, his muscles honed to steel and his mind sharpened with the teachings of discipline and strategy. The Northern Army stood as a bastion of strength and valor, their resilience forged in the harsh winters and unforgiving landscapes of their homeland. Alaric's name soon became synonymous with courage and leadership, his every move on the battlefield a testament to his skill and unwavering resolve.
+For Alexander, the success strengthened his resolve in his covert endeavors for social change. His involvement with the social reform group, once a source of internal conflict, now became an integral part of his identity, shared openly with Adelaide.
 
-On the other end of the realm, Elara delved into the mysteries of magic within the opulent walls of the Order of the Enchanted Flame. She studied under the tutelage of the most powerful sorcerers, her fingertips tracing sigils of ancient power and her voice weaving spells that danced like wildfire. In the Southern Kingdom, where beauty held sway and power was as intoxicating as the rarest of wines, Elara blossomed into a sorceress of unparalleled grace and prowess. Whispers of her abilities spread far and wide, carrying tales of storms called forth at a flick of her wrist and illusions that ensnared the senses.
+The challenges they faced together served to strengthen their relationship. They learned to navigate the intricacies of their public and private lives, becoming adept at balancing their social responsibilities with their personal ambitions.
 
-As the years passed, Alaric rose through the ranks of the Northern Army, his leadership inspiring loyalty in his soldiers and fear in his enemies. Battles raged across the realm, each clash leaving scars on the land and sorrow in the hearts of the people. The war between the North and the South seemed endless, fueled by ancient rivalries and unspoken grievances that festered like wounds that refused to heal.
+As Adelaide and Alexander grew closer, they found that their love was not just a product of mutual respect and shared goals but also of a deep understanding of each other's vulnerabilities and strengths. They became each other's confidant, supporter, and most importantly, equal partner in all endeavors.
 
-Alaric and Elara, unknowing of each other's existence, followed their separate paths with determination and conviction, each bound by duty to their factions and driven by a sense of purpose that burned bright within their souls. Little did they know that destiny, like a tapestry woven by unseen hands, was preparing to draw them together in a web of fate that neither could escape.
+Their relationship, once a source of contention, became a symbol of progress and possibility. They showed that love could thrive amidst ambition and that societal norms could be challenged and redefined.
 
-And so, as Alaric stood at the head of his army, sword raised high and eyes steely with resolve, and Elara channeled the elements with a grace that spoke of ancient power, the stage was set for their paths to converge in a clash of strength and magic that would shake the very foundations of Aldoria.
+Their bond was not without its trials, but each obstacle only served to deepen their commitment to each other and their causes. They became a testament to the power of unity in the face of adversity, inspiring others in their circles to rethink their perceptions and biases.
+
+Years later, Adelaide and Alexander remained at the forefront of social and technological progress. Their steam engine innovation paved the way for new advancements, transforming industries and societal norms alike. They continued to work tirelessly, both in their professional fields and within the social reform movement, driven by a shared vision of a more equitable and progressive world.
+
+Their love story, interwoven with their professional achievements, became a tale recounted in households and workshops throughout London. It served as a beacon of hope and inspiration, a reminder that the heart and the mind need not be at odds, and that true progress is born from the courage to pursue one's dreams, regardless of societal constraints.
+
+In the quiet moments of reflection, Adelaide and Alexander would often gaze upon the city they had helped transform. Their legacy was not just in the machines that powered it or the social reforms they championed, but in the indelible mark they left on the hearts and minds of those who dared to dream of a better world.
 
 """
 
@@ -19,10 +25,11 @@ from pathlib import Path
 
 client = OpenAI(api_key="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")
 
-speech_file_path = Path(__file__).parent / "story.mp3"
+# Run `cat 1.mp3 2.mp3 3.mp3 4.mp3 > historical_fiction.mp3` to merge the audio files
+speech_file_path = Path(__file__).parent / "4.mp3"
 response = client.audio.speech.create(
-    model="tts-1",
-    voice="nova",
+    model="tts-1-hd",
+    voice="fable",
     input=text
 )
 response.stream_to_file(speech_file_path)
