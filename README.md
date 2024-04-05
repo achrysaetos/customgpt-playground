@@ -1,6 +1,6 @@
 # Playground for GPT API's
 
-Simple, cool, and useful mini-projects.
+Simple, cool, and useful mini-projects. Audio files are in the `language/podcast/story_files` folder. Text to speech is in the `scripts` folder. Instructions to create prompts to run on relevant GPT versions online are in the `prompts` folder (makes the story generator below somewhat redundant unless you want greater length and customizability for your narrative).
 
 ## Custom language learning
 
