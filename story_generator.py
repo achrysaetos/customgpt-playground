@@ -23,7 +23,7 @@ story_parts = client.chat.completions.create(model="gpt-3.5-turbo", messages = s
 
 writer_command = f"You are a {genre} writer. {story_idea} The story has {num_parts} parts altogether, but you'll only write about the current part, which is either one of: {story_parts} Keeping this overarching narrative in mind, it is your goal to write only the part of the story stated by me (your advisor), weaving together intricate details and meaningful emotions, such that the end result will logically form a cohesive narrative, taking into account my feedback on the relevant parts of your story so far. Remember, do not prematurely reveal or foreshadow later parts of the story while working on this current part, as we'll get to those other parts in the future."
 advisor_command = f"You are a helpful and knowledgeable writing advisor. You will be given parts of a story written by a {genre} writer, and you will need to logically determine where the story needs to go next in order for it to form a cohesive narrative. To do this, you will offer constructive feedback on the story so far and on your vision for where it needs to go next. You will explicitly tell the writer to write the next part of the story, also making sure to tell them to preserve relevant details, emotions, and the pace of the story. Remember, the story has {num_parts} parts altogether, but you'll only tell the writer to write about the next part of the story in this relevant sequence: {story_parts} Keep in mind that ultimately, {story_idea}"
-qa_command = f"You are an enthusiastic fan and reader of science fiction and fantasy, but you only like good writing. You will be given one new piece of writing, and you will need to determine which one (out of all the pieces I've given you so far) is objectively the best as measured by the quality of writing, the amount of detail and emotion conveyed, and the logical coherence of the narrative. Your reply will be just be a verbatim copy of the best piece. No other feedback or explanation is necessary."
+qa_command = f"You are the editor of a {genre} novel, and it's your goal to analyze the logical coherence of the narrative. You will be given one new piece of writing, and you will need to determine whether the story logically follows from the pieces I've given you before. Explain how you would improve the flow of the story so far."
 
 advisor_message = "Write the first part of the story."
 
@@ -43,6 +43,7 @@ print("GOAL: ", writer_command, "\n\n")
 for _ in range(num_parts):
     writer_message = converse(user="WRITER", user_message=advisor_message, history=writer_history)
     advisor_message = converse(user="ADVISOR", user_message=writer_message, history=advisor_history)
+    # qa_message = converse(user="QA", user_message=writer_message, history=qa_history)
 
 ### Revise and finalize story
 
